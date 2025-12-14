@@ -1,0 +1,127 @@
+.card {
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 18px;
+
+    background: var(--card-bg-history);
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.title {
+    margin: 0 0 12px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.empty {
+    opacity: 0.75;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    gap: 10px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--row-bg);
+    border: 1px solid var(--row-border);
+    transition: transform 120ms ease, background 120ms ease;
+    min-width: 0;
+}
+
+.item:hover {
+    transform: translateY(-1px);
+    background: var(--row-bg-hover);
+}
+
+.itemMain {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.location {
+    font-weight: 600;
+    font-size: 15px;
+    opacity: 0.95;
+
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.datetime {
+    font-size: 12px;
+    opacity: 0.7;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .card {
+        padding: 16px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .empty {
+        font-size: 13px;
+    }
+
+    .item {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .itemMain {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .location {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .datetime {
+        font-size: 11px;
+        opacity: 0.65;
+    }
+
+    .actions {
+        gap: 8px;
+    }
+}
